@@ -56,6 +56,7 @@ body {
   padding-right: 5%;
 }
 
+/*Trying to move login and signup button to right of navbar. Not working. */
 .usersignin {
-  position: right;
+  float: left;
 }
