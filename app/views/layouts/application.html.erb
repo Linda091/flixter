@@ -10,35 +10,48 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <%=link_to 'FLIXTER', root_path, class: 'navbar-brand' %>
+    <div id="flex-content-container">
+      <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <%=link_to 'FLIXTER', root_path, class: 'navbar-brand' %>
 
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="#">Features</a>
-          <a class="nav-item nav-link" href="#">Pricing</a>
-            <% if user_signed_in? %>
-              <%=link_to 'Sign Out', destroy_user_session_path, class:'nav-item nav-link' %>
-            <% else%>
-              <%=link_to 'Sign Up', new_user_registration_path, class:'nav-item nav-link' %>
-              <%=link_to 'Log In', new_user_session_path, class:'nav-item nav-link' %>
-            <% end %>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <%=link_to 'Home', root_path, class: 'nav-item nav-link active' %><span class="sr-only">(current)</span>
+            <a class="nav-item nav-link" href="#">Features</a>
+            <a class="nav-item nav-link" href="#">Pricing</a>
+              <% if user_signed_in? %>
+                <%=link_to 'Sign Out', destroy_user_session_path, class:'nav-item nav-link' %>
+              <% else%>
+                <%=link_to 'Sign Up', new_user_registration_path, class:'nav-item nav-link' %>
+                <%=link_to 'Log In', new_user_session_path, class:'nav-item nav-link' %>
+              <% end %>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
-    <% if notice.present? %>
-      <p class="alert alert-info"><%=notice %></p>
-    <% end %>
+      <% if notice.present? %>
+        <p class="alert alert-info"><%=notice %></p>
+      <% end %>
 
-    <% if alert.present? %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
+      <% if alert.present? %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+
 
     <%= yield %>
+
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <br/>
+        <b>Footer Here</b>
+        <br/>
+        <%= link_to 'Link', '#' %>
+      </div>
+    </div>
   </body>
 </html>
