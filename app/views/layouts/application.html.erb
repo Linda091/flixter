@@ -23,7 +23,7 @@
             <a class="nav-item nav-link" href="#">Features</a>
             <a class="nav-item nav-link" href="#">Pricing</a>
               <% if user_signed_in? %>
-                <%=link_to 'Sign Out', destroy_user_session_path, class:'nav-item nav-link' %>
+                <%=link_to 'Sign Out', destroy_user_session_path, method: :delete,class:'nav-item nav-link' %>
               <% else%>
                 <%=link_to 'Sign Up', new_user_registration_path, class:'nav-item nav-link' %>
                 <%=link_to 'Log In', new_user_session_path, class:'nav-item nav-link' %>
@@ -65,7 +65,7 @@
           <div class="col-sm">
             <h5> Contact </h5>
             <br/>
-            <p <%=link_to 'Linda Ogbevoen', 'github.com/Linda091' %>></p>
+            <p <%=link_to 'Linda Ogbevoen', 'https://github.com/Linda091' %>></p>
           </div>
           <div class="col-sm">
             <h5> Social </h5>
