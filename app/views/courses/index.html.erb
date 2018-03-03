@@ -5,7 +5,7 @@
 <hr/>
 
   <% @courses.each do |course| %>
-    <h2 class="text-center"><%= course.title %></h2>
+    <h2><%=link_to course.title, course_path(course), class: 'text-center'%></h2>
     <br/>
     <div class="row">
       <div class="col-sm-8 col-12">
@@ -13,7 +13,7 @@
       </div>
       <br/>
       <div class="col-sm-4 col-12 text-center">
-        <%= link_to 'Button', '#', class: 'btn btn-primary btn-large' %>
+        <%= link_to 'More Details', course_path(course), class: 'btn btn-primary btn-large' %>
       </div>
     </div>
     <br class="clr" />
