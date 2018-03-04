@@ -3,22 +3,25 @@
 <div class="booyah-box col-10 offset-1">
   <h1><%=@course.title %></h1>
 
-<br/><br/>
+  <br/><br/>
 
-  <div class="col-sm-4 col-12">
-    <span class="badge badge-default">
-      <%= number_to_currency @course.cost %>
-    </span>
+  <div class="row">
+    <div class="col-sm-4 col-12 text-center">
+     <span class="badge badge-default">
+       <%= number_to_currency @course.cost %>
+     </span>
+    </div>
+
+  <br/><br/>
+    <div class="col-sm-8 col-12">
+     <%= @course.description %>
+    </div>
+  <br/><br/>
+
+  <% if current_user && (current_user == @course.user) %>
+     <%= link_to 'Admin', instructor_course_path(@course), class: 'btn  btn-danger btn-large' %>
+  <% end %>
+  <br/><br/>
   </div>
-
-<br/><br/>
-  <div class="col-sm-8 col-12">
-    <%= @course.description %>
-  </div>
-<br/><br/>
-
-<% if current_user && (current_user == @course.user) %>
-  <%= link_to 'Admin', instructor_course_path(@course), class: 'btn  btn-danger btn-large' %>
-<% end %>
-<br/><br/>
+  
 </div>
