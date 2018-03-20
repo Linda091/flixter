@@ -74,3 +74,5 @@ gem 'mini_magick'
 gem 'carrierwave-aws'
 
 gem 'ranked-model'
+
+gem 'stripe'
