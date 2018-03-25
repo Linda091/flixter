@@ -14,11 +14,11 @@ class LessonsController < ApplicationController
       redirect_to course_path(current_lesson.section.course)
     else
       redirect_to course_path, :alert => "You must be enrolled to view the lesson"
+    end
   end
 
   helper_method :current_lesson
   def current_lesson
     @current_lesson ||= Lesson.find(params[:id])
   end
-
 end
