@@ -22,14 +22,13 @@
           <div class="navbar-nav">
             <%=link_to 'Home', root_path, class: 'nav-item nav-link active' %><span class="sr-only">(current)</span>
             <%=link_to 'See All Courses', courses_path, class: 'nav-item nav-link' %>
-            <div class="login_button">
               <% if user_signed_in? %>
-                <%=link_to 'Sign Out', destroy_user_session_path, method: :delete,class:'nav-item nav-link' %>
+                <%=link_to 'My Dashboard', dashboard_path, class: 'nav-item nav-link' %>
+                <%=link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-item nav-link' %>
               <% else%>
-                <%=link_to 'Sign Up', new_user_registration_path, class:'nav-item nav-link' %>
-                <%=link_to 'Log In', new_user_session_path, class:'nav-item nav-link' %>
+                <%=link_to 'Sign Up', new_user_registration_path, class: 'nav-item nav-link' %>
+                <%=link_to 'Log In', new_user_session_path, class: 'nav-item nav-link' %>
               <% end %>
-            </div>
           </div>
         </div>
       </nav>
