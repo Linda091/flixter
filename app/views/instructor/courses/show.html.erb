@@ -27,7 +27,7 @@
   </div>
 
 <ul class="sections">
-  <% current_course.sections(:row_order).each do |section| %>
+  <% current_course.sections.rank(:row_order).each do |section| %>
       <div class="header">
         <span class= "fa fa-ellipsis-v"></span>
         <%=section.title %>
