@@ -30,16 +30,20 @@
   <br/>
   <%=link_to 'Preview As a Student', course_path(current_course), class: 'btn btn-warning' %>
   <br class="clr" />
-
+  <br/><br/>
   <%= image_tag current_course.image, class: 'img-fluid' %>
 
+  <br/><br/>
+<!-- Button trigger modal -->
   <div class="text-center">
-    <%= link_to 'Add a New Section', new_instructor_course_section_path(current_course), class: 'btn btn-primary btn-lg' %>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newSectionModal">
+     Add a New Section
+    </button>
   </div>
 
 <ul class="sections">
   <% current_course.sections.rank(:row_order).each do |section| %>
-    <li data-update-url="<%= instructor_section_path(section) %>">
+    <li data-update-url="<%= instructor_section_path(section) %>" class="section-li">
       <div class="header">
         <span class= "fa fa-ellipsis-v"></span>
         <%=section.title %>
@@ -73,4 +77,27 @@
 </ul>
 <br class="clr" />
 
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newSectionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newSectionModal">Add a New Section</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <%=simple_form_for @section, url: instructor_course_sections_path(current_course) do |f| %>
+      <div class="modal-body">
+          <%= f.input :title %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= f.submit "Add a Section", class: 'btn btn-primary' %>
+      </div>
+     <% end %>
+    </div>
+  </div>
 </div>
