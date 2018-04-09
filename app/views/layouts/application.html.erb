@@ -50,28 +50,39 @@
       <div class="container">
       <br/>
         <div class="row">
-          <div class="col-sm">
+          <div class="col-12 col-sm-3">
             <h5>Teachers</h5>
             <br/>
             <%= link_to 'Teach a Course', new_instructor_course_path %>
-            <p> View Dashboard </p>
+            <br/>
+            <%=link_to 'View Dashboard', dashboard_path %>
           </div>
 
-          <div class="col-sm">
+          <div class="col-12 col-sm-3">
             <h5> About</h5>
             <br/>
-            <p> Team </p>
-            <p> Careers </p>
+            <%=link_to 'Team', '#' %>
+            <%= link_to 'Careers', '#' %>
           </div>
-          <div class="col-sm">
+
+          <div class="col-12 col-sm-3">
             <h5> Contact </h5>
             <br/>
-            <p <%=link_to 'Linda Ogbevoen', 'https://github.com/Linda091' %>></p>
+            <%=link_to 'Linda Ogbevoen', 'https://github.com/Linda091' %>
           </div>
-          <div class="col-sm">
+
+          <div class="col-12 col-sm-3 social">
             <h5> Social </h5>
             <br/>
-            <p>Facebook, Twitter, Linkedin</p>
+            <%= link_to 'https://github.com/Linda091/' do %>
+              <span class="fa fa-github-square fa-2x social-button"></span>
+            <% end %>
+            <%= link_to 'https://www.linkedin.com/in/lindaogbevoen/' do %>
+              <span class="fa fa-linkedin-square fa-2x social-button"></span>
+            <% end %>
+            <%= link_to 'https://www.twitter.com/iamlinda91' do %>
+              <span class="fa fa-twitter-square fa-2x social-button"></span>
+            <% end %>
           </div>
         </div>
       </div>
