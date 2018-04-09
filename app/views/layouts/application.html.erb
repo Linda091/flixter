@@ -11,7 +11,6 @@
   </head>
 
   <body>
-    <div id="flex-content-container">
       <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -33,6 +32,7 @@
         </div>
       </nav>
 
+
       <% if notice.present? %>
         <p class="alert alert-info"><%=notice %></p>
       <% end %>
@@ -44,10 +44,8 @@
 
     <%= yield %>
 
-    </div>
-
     <div id="footer">
-      <div class="container">
+      <div class="container text-center">
       <br/>
         <div class="row">
           <div class="col-12 col-sm-3">
